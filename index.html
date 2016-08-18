@@ -1,50 +1,128 @@
 <!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+    <title>Mongo &amp; MySQL ⇒ PostgreSQL</title>
 
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css">
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/black.css">
 
-		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
+    <!-- custom CSS -->
+    <link rel="stylesheet" href="custom.css">
 
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
-			</div>
-		</div>
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
 
-		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.js"></script>
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <h2>
+            Mongo &amp; MySQL ⇒ PostgreSQL
+          </h2>
+          <img src="images/logos.png" style="width: 70%; border: none; background: none;">
+        </section>
+        <section>
+          <h2>
+            What are databases?
+          </h2>
+        </section>
+        <section>
+          <h2>
+            Different technologies<br>have<br>different strengths
+          </h2>
+        </section>
+        <section>
+          <h2>
+            MySQL
+          </h2>
+          <p class="fragment fade-up">Low barrier to entry</p>
+          <p class="fragment fade-up">LAMP</p>
+          <p class="fragment fade-up">A lot of blog posts for n00bs who don't RTFM</p>
+          <p class="fragment fade-up">"Tries" to follow ANSI SQL</p>
+          <p class="fragment fade-up">Very forgiving aka "good enough for most"</p>
+        </section>
+        <section>
+          <h2>
+            MongoDB
+          </h2>
+          <p class="fragment fade-up">Schemaless NoSQL</p>
+          <p class="fragment fade-up">Max doc size: 16Mb</p>
+          <p class="fragment fade-up">JS-esque query language</p>
+          <p class="fragment fade-up">No joins</p>
+          <p class="fragment fade-up">No transactions</p>
+          <p class="fragment fade-up">Locks everywhere</p>
+          <p class="fragment fade-up">Biggest advertising budget of NoSQL DBs</p>
+        </section>
+        <section>
+          <h2>
+            PostgreSQL
+          </h2>
+          <p class="fragment fade-up">Setup involves more</p>
+          <p class="fragment fade-up">Slower read performance</p>
+          <p class="fragment fade-up">MVCC, Copy-on-Write &amp; vacuuming</p>
+          <p class="fragment fade-up">TOAST compression</p>
+          <p class="fragment fade-up">Max row size: 1.6TB<br>Max field size: 1GB</p>
+          <p class="fragment fade-up">Strict - NOT NULL - JSON</p>
+          <p class="fragment fade-up">ACID, Multiple Triggers, Stored Procedures, Query Planner, etc...</p>
+        </section>
+        <section>
+          <h2>
+            Wherewolf moves<br>
+            with zero downtime
+          </h2>
+          <img src="images/DBMigrationOverview.png" style="width: 70%">
+        </section>
+        <section>Beginning</section>
+        <section>Prepare model on PostgreSQL</section>
+        <section>Writes go to PostgreSQL</section>
+        <section>Begin copying from MySQL &amp; Mongo</section>
+        <section>Reads come from PostgreSQL</section>
+        <section>Disconnect writes to MySQL &amp; Mongo</section>
+        <section>Turn off MySQL &amp; Mongo</section>
+        <section>
+          <h2>
+            Result
+          </h2>
+          <ul>
+            <li>30% reduction of Time-In-Database</li>
+            <li>45% reduction in disk usage</li>
+            <li>50% reduction in number of databases to manage</li>
+          </ul>
+        </section>
+      </div>
+    </div>
 
-		<script>
-			// More info https://github.com/hakimel/reveal.js#configuration
-			Reveal.initialize({
-				history: true,
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
 
-				// More info https://github.com/hakimel/reveal.js#dependencies
-				dependencies: [
-					{ src: 'plugin/markdown/marked.js' },
-					{ src: 'plugin/markdown/markdown.js' },
-					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
-				]
-			});
-		</script>
-	</body>
+    <script>
+      // More info https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        history: true,
+
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // More info https://github.com/hakimel/reveal.js#dependencies
+        dependencies: [
+          { src: 'plugin/markdown/marked.js' },
+          { src: 'plugin/markdown/markdown.js' },
+          { src: 'plugin/notes/notes.js', async: true },
+          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+        ]
+      });
+    </script>
+  </body>
 </html>
