@@ -79,18 +79,110 @@
         </section>
         <section>
           <h2>
-            Wherewolf moves<br>
+            Wherewolf migrates<br>
             with zero downtime
           </h2>
           <img src="images/DBMigrationOverview.png" style="width: 70%">
+          <h3>1M+ rows @ 70GB</h3>
         </section>
-        <section>Beginning</section>
-        <section>Prepare model on PostgreSQL</section>
-        <section>Writes go to PostgreSQL</section>
-        <section>Begin copying from MySQL &amp; Mongo</section>
-        <section>Reads come from PostgreSQL</section>
-        <section>Disconnect writes to MySQL &amp; Mongo</section>
-        <section>Turn off MySQL &amp; Mongo</section>
+        <section>
+          <h2>
+            Beginning
+          </h2>
+          <div class="col">
+            <img src="http://lorempixel.com/400/400">
+          </div>
+          <div class="col">
+            <p></p>
+          </div>
+        </section>
+        <section>
+          <h2>
+            Prepare PostgreSQL
+          </h2>
+          <div class="col">
+            <img src="http://lorempixel.com/400/400">
+          </div>
+          <div class="col">
+            <ul>
+              <li>Install / Launch</li>
+              <li>Create users</li>
+              <li>Create tables</li>
+              <li>Create sequences</li>
+              <li>Leave indexes off</li>
+            </ul>
+          </div>
+        </section>
+        <section>
+          <h2>
+            Writes go to PostgreSQL as well
+          </h2>
+          <div class="col">
+            <img src="http://lorempixel.com/400/400">
+          </div>
+          <div class="col">
+            <p>Deploy code where all API endpoints and methods() write to legacy &amp; next-gen in parallel
+              <ul>
+                <li>Mongo</li>
+                <li>MySQL</li>
+                <li>PostgreSQL</li>
+              </ul>
+            </p>
+          </div>
+        </section>
+        <section>
+          <h2>
+            Begin copying from MySQL &amp; Mongo
+          </h2>
+          <div class="col">
+            <img src="http://lorempixel.com/400/400">
+          </div>
+          <div class="col">
+            <p>Worker minion goes through, row by row in MySQL and Mongo and ensures this row is copied to PostgreSQL
+            <ul>
+              <li>Worker
+                <ul>
+                  <li>Mongo</li>
+                  <li>MySQL</li>
+                  <li>PostgreSQL</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </section>
+        <section>
+          <h2>
+            Reads come from PostgreSQL
+          </h2>
+          <div class="col">
+            <img src="http://lorempixel.com/400/400">
+          </div>
+          <div class="col">
+            <p></p>
+          </div>
+        </section>
+        <section>
+          <h2>
+            Disconnect from MySQL &amp; Mongo
+          </h2>
+          <div class="col">
+            <img src="http://lorempixel.com/400/400">
+          </div>
+          <div class="col">
+            <p></p>
+          </div>
+        </section>
+        <section>
+          <h2>
+            Turn off MySQL &amp; Mongo
+          </h2>
+          <div class="col">
+            <img src="http://lorempixel.com/400/400">
+          </div>
+          <div class="col">
+            <p></p>
+          </div>
+        </section>
         <section>
           <h2>
             Result
@@ -99,6 +191,7 @@
             <li>30% reduction of Time-In-Database</li>
             <li>45% reduction in disk usage</li>
             <li>50% reduction in number of databases to manage</li>
+            <li>1 less server</li>
           </ul>
         </section>
       </div>

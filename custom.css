@@ -1,3 +1,12 @@
 * {
   text-transform: none !important;
 }
+
+.col {
+  float: left;
+  width: 45%;
+}
+
+p {
+  text-align: left;
+}
