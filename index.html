@@ -31,7 +31,7 @@
           <h2>
             Mongo &amp; MySQL ⇒ PostgreSQL
           </h2>
-          <img src="images/logos.png" style="width: 70%; border: none; background: none;">
+          <img src="images/logos.png" style="width: 70%;">
         </section>
         <section>
           <h2>
@@ -47,35 +47,49 @@
           <h2>
             MySQL
           </h2>
-          <p class="fragment fade-up">Low barrier to entry</p>
-          <p class="fragment fade-up">LAMP</p>
-          <p class="fragment fade-up">A lot of blog posts for n00bs who don't RTFM</p>
-          <p class="fragment fade-up">"Tries" to follow ANSI SQL</p>
-          <p class="fragment fade-up">Very forgiving aka "good enough for most"</p>
+          <div class="col">
+            <img src="images/logo_mysql.png">
+          </div>
+          <div class="col">
+            <p class="fragment fade-up">Low barrier to entry</p>
+            <p class="fragment fade-up">LAMP Stack</p>
+            <p class="fragment fade-up">A lot of blog posts for n00bs who don't RTFM</p>
+            <p class="fragment fade-up">"Tries" to follow ANSI SQL</p>
+            <p class="fragment fade-up">Very forgiving aka "good enough for most"</p>
+          </div>
         </section>
         <section>
           <h2>
             MongoDB
           </h2>
-          <p class="fragment fade-up">Schemaless NoSQL</p>
-          <p class="fragment fade-up">Max doc size: 16Mb</p>
-          <p class="fragment fade-up">JS-esque query language</p>
-          <p class="fragment fade-up">No joins</p>
-          <p class="fragment fade-up">No transactions</p>
-          <p class="fragment fade-up">Locks everywhere</p>
-          <p class="fragment fade-up">Biggest advertising budget of NoSQL DBs</p>
+          <div class="col">
+            <img src="images/logo_mongodb.png">
+          </div>
+          <div class="col">
+            <p class="fragment fade-up">Schemaless NoSQL</p>
+            <p class="fragment fade-up">Max doc size: 16Mb</p>
+            <p class="fragment fade-up">JS-esque query language</p>
+            <p class="fragment fade-up">No joins</p>
+            <p class="fragment fade-up">No transactions</p>
+            <p class="fragment fade-up">Locks everywhere</p>
+            <p class="fragment fade-up">Biggest advertising budget of NoSQL DBs</p>
+          </div>
         </section>
         <section>
           <h2>
             PostgreSQL
           </h2>
-          <p class="fragment fade-up">Setup involves more</p>
-          <p class="fragment fade-up">Slower read performance</p>
-          <p class="fragment fade-up">MVCC, Copy-on-Write &amp; vacuuming</p>
-          <p class="fragment fade-up">TOAST compression</p>
-          <p class="fragment fade-up">Max row size: 1.6TB<br>Max field size: 1GB</p>
-          <p class="fragment fade-up">Strict - NOT NULL - JSON</p>
-          <p class="fragment fade-up">ACID, Multiple Triggers, Stored Procedures, Query Planner, etc...</p>
+         <div class="col">
+            <img src="images/logo_postgre.png">
+          </div>
+          <div class="col">
+            <p class="fragment fade-up">Setup involves more</p>
+            <p class="fragment fade-up">MVCC Slower reads, faster writes</p>
+            <p class="fragment fade-up">TOAST compression</p>
+            <p class="fragment fade-up">Max row size: 1.6TB<br>Max field size: 1GB</p>
+            <p class="fragment fade-up">Strict - NOT NULL - Types</p>
+            <p class="fragment fade-up">ACID, Multiple Triggers, Stored Procedures, Query Planner, etc...</p>
+          </div>
         </section>
         <section>
           <h2>
@@ -84,6 +98,7 @@
           </h2>
           <img src="images/DBMigrationOverview.png" style="width: 70%">
           <h3>1M+ rows @ 70GB</h3>
+          <h3>in 50 hours</h3>
         </section>
         <section>
           <h2>
@@ -98,19 +113,44 @@
         </section>
         <section>
           <h2>
+            Rename models in ORM
+          </h2>
+          <ul>
+            <li>
+              User ⇒ UserMySQL
+            </li>
+            <li>
+              Client ⇒ ClientMySQL
+            </li>
+            <li>
+              Product ⇒ ProductMySQL
+            </li>
+            <li>
+              TripLog ⇒ TripLogMongo
+            </li>
+            <li>
+              Signature ⇒ SignatureMongo
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h2>
             Prepare PostgreSQL
           </h2>
           <div class="col">
             <img src="http://lorempixel.com/400/400">
           </div>
           <div class="col">
-            <ul>
-              <li>Install / Launch</li>
-              <li>Create users</li>
-              <li>Create tables</li>
-              <li>Create sequences</li>
-              <li>Leave indexes off</li>
-            </ul>
+            <p>
+              <ul>
+                <li>Install / Launch RDS</li>
+                <li>Create users</li>
+                <li>Create tables</li>
+                <li>Create sequences</li>
+                <li>Leave indexes off</li>
+                <li>Create Models (*Postgre)</li>
+              </ul>
+            </p>
           </div>
         </section>
         <section>
@@ -121,12 +161,11 @@
             <img src="http://lorempixel.com/400/400">
           </div>
           <div class="col">
-            <p>Deploy code where all API endpoints and methods() write to legacy &amp; next-gen in parallel
-              <ul>
-                <li>Mongo</li>
-                <li>MySQL</li>
-                <li>PostgreSQL</li>
-              </ul>
+            <p>
+              "Truth" is still on legacy databases
+            </p>
+            <p>
+              Code deployed to PROD where all API /endpoints and methods() write to legacy &amp; next-gen in parallel. Response upon completion of legacy DB
             </p>
           </div>
         </section>
@@ -138,16 +177,12 @@
             <img src="http://lorempixel.com/400/400">
           </div>
           <div class="col">
-            <p>Worker minion goes through, row by row in MySQL and Mongo and ensures this row is copied to PostgreSQL
-            <ul>
-              <li>Worker
-                <ul>
-                  <li>Mongo</li>
-                  <li>MySQL</li>
-                  <li>PostgreSQL</li>
-                </ul>
-              </li>
-            </ul>
+            <p>
+              Worker minion goes through, row by row in MySQL and Mongo and ensures each row from both DBs is copied to PostgreSQL
+            </p>
+            <p>
+              Only after worker minion is finished, create indexes
+            </p>
           </div>
         </section>
         <section>
@@ -158,18 +193,31 @@
             <img src="http://lorempixel.com/400/400">
           </div>
           <div class="col">
-            <p></p>
+            <p>
+              "Truth" is now PostgreSQL
+            </p>
+            <p>
+              Code deployed to PROD where all API /endpoints and methods() read from PostgreSQL
+            </p>
           </div>
         </section>
         <section>
           <h2>
-            Disconnect from MySQL &amp; Mongo
+            Disconnect MySQL &amp; Mongo
           </h2>
           <div class="col">
             <img src="http://lorempixel.com/400/400">
           </div>
           <div class="col">
-            <p></p>
+            <p>
+              Code deployed to PROD that nothing interacts with legacy databases anymore
+            </p>
+            <p>
+              Linting tools to help find *Mongo &amp; *MySQL references
+            </p>
+            <p>
+              Rename ORM Models sans DB suffix
+            </p>
           </div>
         </section>
         <section>
@@ -193,6 +241,9 @@
             <li>50% reduction in number of databases to manage</li>
             <li>1 less server</li>
           </ul>
+        </section>
+        <section>
+          <img src="images/Wherewolf_Wolf_Icon.png" style="width: 70%;">
         </section>
       </div>
     </div>
