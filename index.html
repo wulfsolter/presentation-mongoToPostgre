@@ -51,11 +51,11 @@
             <img src="images/logo_mysql.png">
           </div>
           <div class="col">
-            <p class="fragment fade-up">Low barrier to entry</p>
-            <p class="fragment fade-up">LAMP Stack</p>
-            <p class="fragment fade-up">A lot of blog posts for n00bs who don't RTFM</p>
-            <p class="fragment fade-up">"Tries" to follow ANSI SQL</p>
-            <p class="fragment fade-up">Very forgiving aka "good enough for most"</p>
+            <p>Low barrier to entry</p>
+            <p>LAMP Stack</p>
+            <p>A lot of blog posts for n00bs who don't RTFM</p>
+            <p>"Tries" to follow ANSI SQL</p>
+            <p>Very forgiving aka "good enough for most"</p>
           </div>
         </section>
         <section>
@@ -66,13 +66,13 @@
             <img src="images/logo_mongodb.png">
           </div>
           <div class="col">
-            <p class="fragment fade-up">Schemaless NoSQL</p>
-            <p class="fragment fade-up">Max doc size: 16Mb</p>
-            <p class="fragment fade-up">JS-esque query language</p>
-            <p class="fragment fade-up">No joins</p>
-            <p class="fragment fade-up">No transactions</p>
-            <p class="fragment fade-up">Locks everywhere</p>
-            <p class="fragment fade-up">Biggest advertising budget of NoSQL DBs</p>
+            <p>Schemaless NoSQL</p>
+            <p>Max doc size: 16Mb</p>
+            <p>JS-esque query language</p>
+            <p>No joins</p>
+            <p>No transactions</p>
+            <p>Locks everywhere</p>
+            <p>Biggest advertising budget of NoSQL DBs</p>
           </div>
         </section>
         <section>
@@ -83,12 +83,12 @@
             <img src="images/logo_postgre.png">
           </div>
           <div class="col">
-            <p class="fragment fade-up">Setup involves more</p>
-            <p class="fragment fade-up">MVCC Slower reads, faster writes</p>
-            <p class="fragment fade-up">TOAST compression</p>
-            <p class="fragment fade-up">Max row size: 1.6TB<br>Max field size: 1GB</p>
-            <p class="fragment fade-up">Strict - NOT NULL - Types</p>
-            <p class="fragment fade-up">ACID, Multiple Triggers, Stored Procedures, Query Planner, etc...</p>
+            <p>Setup involves more</p>
+            <p>MVCC slower reads, faster writes</p>
+            <p>TOAST compression</p>
+            <p>Max row size: 1.6TB<br>Max field size: 1GB</p>
+            <p>Strict - NOT NULL - Types</p>
+            <p>ACID, Multiple Triggers, Stored Procedures, Query Planner, etc...</p>
           </div>
         </section>
         <section>
@@ -100,35 +100,32 @@
           <h3>1M+ rows @ 70GB</h3>
           <h3>in 50 hours</h3>
         </section>
-        <section>
+        <section style="height: 1000px;">
           <h2>
             Beginning
           </h2>
           <img src="images/MigrationStep0.png">
         </section>
-        <section>
+        <section style="height: 1000px;">
           <h2>
             Rename models in ORM
           </h2>
+          <h4>
+            to explicitly reference the database to which they're wired
+          </h4>
           <ul>
-            <li>
-              User ⇒ UserMySQL
-            </li>
-            <li>
-              Client ⇒ ClientMySQL
-            </li>
-            <li>
-              Product ⇒ ProductMySQL
-            </li>
-            <li>
-              TripLog ⇒ TripLogMongo
-            </li>
-            <li>
-              Signature ⇒ SignatureMongo
-            </li>
+            <li>Client ⇒ ClientMySQL</li>
+            <li>Guest ⇒ GuestMySQL</li>
+            <li>GuestLog ⇒ GuestLogMongo</li>
+            <li>Photo ⇒ PhotoMongo</li>
+            <li>Product ⇒ ProductMySQL</li>
+            <li>Signature ⇒ SignatureMongo</li>
+            <li>TripLog ⇒ TripLogMongo</li>
+            <li>User ⇒ UserMySQL</li>
+            <li>...</li>
           </ul>
         </section>
-        <section>
+        <section style="height: 1000px;">
           <h2>
             Prepare PostgreSQL
           </h2>
@@ -148,7 +145,7 @@
             </p>
           </div>
         </section>
-        <section>
+        <section style="height: 1000px;">
           <h2>
             Writes go to PostgreSQL as well
           </h2>
@@ -164,7 +161,7 @@
             </p>
           </div>
         </section>
-        <section>
+        <section style="height: 1000px;">
           <h2>
             Begin copying from MySQL &amp; Mongo
           </h2>
@@ -180,7 +177,7 @@
             </p>
           </div>
         </section>
-        <section>
+        <section style="height: 1000px;">
           <h2>
             Reads come from PostgreSQL
           </h2>
@@ -196,7 +193,7 @@
             </p>
           </div>
         </section>
-        <section>
+        <section style="height: 1000px;">
           <h2>
             Disconnect MySQL &amp; Mongo
           </h2>
@@ -215,7 +212,7 @@
             </p>
           </div>
         </section>
-        <section>
+        <section style="height: 1000px;">
           <h2>
             Turn off MySQL &amp; Mongo
           </h2>
