@@ -63,7 +63,7 @@
             MongoDB
           </h2>
           <div class="col">
-            <img src="images/logo_mongodb.png">
+            <img style="width: 330px;" src="images/logo_mongodb.png">
           </div>
           <div class="col">
             <p>Schemaless NoSQL</p>
@@ -101,12 +101,14 @@
           <h3>in 50 hours</h3>
         </section>
         <section style="height: 1000px;">
+          <div class="meter"><span style="width: calc(100% * 1 / 9)"></span></div>
           <h2>
             Beginning
           </h2>
           <img src="images/MigrationStep0.png">
         </section>
         <section style="height: 1000px;">
+          <div class="meter"><span style="width: calc(100% * 2 / 9)"></span></div>
           <h2>
             Rename models in ORM
           </h2>
@@ -126,6 +128,7 @@
           </ul>
         </section>
         <section style="height: 1000px;">
+          <div class="meter"><span style="width: calc(100% * 3 / 9)"></span></div>
           <h2>
             Prepare PostgreSQL
           </h2>
@@ -146,6 +149,7 @@
           </div>
         </section>
         <section style="height: 1000px;">
+          <div class="meter"><span style="width: calc(100% * 4 / 9)"></span></div>
           <h2>
             Writes go to PostgreSQL as well
           </h2>
@@ -162,6 +166,7 @@
           </div>
         </section>
         <section style="height: 1000px;">
+          <div class="meter"><span style="width: calc(100% * 5 / 9)"></span></div>
           <h2>
             Begin copying from MySQL &amp; Mongo
           </h2>
@@ -173,11 +178,12 @@
               Worker minion goes through, row by row in MySQL and Mongo and ensures each row from both DBs is copied to PostgreSQL
             </p>
             <p>
-              Only after worker minion is finished, create indexes
+              Only after worker minion is finished, create indexes (concurrently)
             </p>
           </div>
         </section>
         <section style="height: 1000px;">
+          <div class="meter"><span style="width: calc(100% * 6 / 9)"></span></div>
           <h2>
             Reads come from PostgreSQL
           </h2>
@@ -194,6 +200,7 @@
           </div>
         </section>
         <section style="height: 1000px;">
+          <div class="meter"><span style="width: calc(100% * 7 / 9)"></span></div>
           <h2>
             Disconnect MySQL &amp; Mongo
           </h2>
@@ -213,6 +220,7 @@
           </div>
         </section>
         <section style="height: 1000px;">
+          <div class="meter"><span style="width: calc(100% * 8 / 9)"></span></div>
           <h2>
             Turn off MySQL &amp; Mongo
           </h2>
@@ -248,6 +256,8 @@
 
         // Display controls in the bottom right corner
         controls: false,
+
+        transition: 'fade',
 
         // More info https://github.com/hakimel/reveal.js#dependencies
         dependencies: [
